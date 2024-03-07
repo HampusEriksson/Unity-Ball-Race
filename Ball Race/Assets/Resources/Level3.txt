@@ -1,0 +1,10 @@
+
+26,73;first
+27,42;first
+24,09;first
+25,30;tiskla
+23,69;tiskla
+22,80;tiskla
+25,06;Hampus
+24,85;Hampus
+31,53;Hampus
