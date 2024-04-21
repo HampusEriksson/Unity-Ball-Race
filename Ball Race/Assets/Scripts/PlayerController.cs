@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -15,15 +13,12 @@ public class PlayerController : MonoBehaviour
 
     public GameManager gameManager;
 
-    // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         startPos = transform.position;
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
         if(!gameManager.levelComplete){
@@ -44,10 +39,6 @@ public class PlayerController : MonoBehaviour
             gameManager.ResetLevel();
         }
         
-
-
-
-
         // Apply a force that moves the player forward
         playerRb.AddForce(Vector3.forward * speed * verticalInput, ForceMode.Force);
 
@@ -61,8 +52,5 @@ public class PlayerController : MonoBehaviour
         }
 
         }
-        
-    }
-
-    
+    }    
 }

@@ -22,5 +22,11 @@ public class LevelManager : MonoBehaviour
         // Load the scene asynchronously by its name
         SceneManager.LoadSceneAsync(sceneName);
     }
+
+    public void QuitGame()
+    {
+        // Quit the game
+        Application.Quit();
+    }
 }
 

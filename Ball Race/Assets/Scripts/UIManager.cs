@@ -5,6 +5,8 @@ using System.IO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Collections;
+using UnityEngine.Networking;
 
 public class UIManager : MonoBehaviour
 {
@@ -68,8 +70,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Class to hold score and username
-    private class ScoreEntry
+    
+    
+}
+
+
+public class ScoreEntry
     {
         public float time;
         public string username;
@@ -80,4 +86,3 @@ public class UIManager : MonoBehaviour
             this.username = username;
         }
     }
-}

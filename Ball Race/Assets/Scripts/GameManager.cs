@@ -1,11 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.IO;
 using UnityEngine.SceneManagement;
-
-
 
 public class GameManager : MonoBehaviour
 {
@@ -13,25 +8,26 @@ public class GameManager : MonoBehaviour
     private bool levelStarted = false;
     public bool levelComplete = false;
     public TextMeshProUGUI timerText;
+    private LeaderBoard leaderBoard;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+        leaderBoard = FindObjectOfType<LeaderBoard>();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        // If the level has started and the level is not complete update the timer
         if(levelStarted && !levelComplete)
         {
             timer += Time.deltaTime;
             timerText.text = "Time: " + timer.ToString("F2");
         }
+
+        // If the level is complete display the time taken to complete the level
         else if(levelComplete)
         {
             timerText.text = "Level Complete!\nTime: " + timer.ToString("F2") + " seconds!";
-           
         }
         
     }
@@ -44,30 +40,23 @@ public class GameManager : MonoBehaviour
     public void CompleteLevel()
     {
         levelComplete = true;
-         SetHighScore();
-        // Load the main menu scene after 5 seconds
-        Invoke("LoadMainMenu", 2);
+        SetHighScore();
+        // Load the main menu scene after 1 second
+        Invoke("LoadMainMenu", 1);
     }
 
     void LoadMainMenu()
     {
         // Load the main menu scene
-        FindObjectOfType<LevelManager>().LoadScene("MainMenu");
+        FindObjectOfType<LevelManager>().LoadScene("MainMenuOnline");
     }
 
     void SetHighScore()
-    {
-        // Get the username
-        string username = UsernameManager.GetUsername();
-        
+    {        
         // Get the current scene name
         string sceneName = SceneManager.GetActiveScene().name;
 
-        // Create the text to append to the file
-        string textToAppend = timer.ToString("F2") + ";" + username + "\n"; // Assuming timer is a variable you have declared elsewhere
-        
-        // Append the text to the file
-        File.AppendAllText("Assets/Resources/" + sceneName + ".txt", textToAppend);
+        leaderBoard.SubmitScore(timer, sceneName);
     }
 
     public void ResetLevel()

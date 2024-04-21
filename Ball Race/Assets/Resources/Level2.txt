@@ -57,3 +57,4 @@
 6,19;mattias
 7,04;Hampus
 6,94;Hampus
+8.63;

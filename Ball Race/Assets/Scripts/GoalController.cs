@@ -4,25 +4,19 @@ using UnityEngine;
 
 public class GoalController : MonoBehaviour
 {
-    public GameManager gameManager;
-    // Start is called before the first frame update
+    private GameManager gameManager;
+
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    // When the player enters the goal, display a message
+    // When the player enters the goal, call the CompleteLevel method in the GameManager
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("You win!");
             gameManager.CompleteLevel();
         }
     }
