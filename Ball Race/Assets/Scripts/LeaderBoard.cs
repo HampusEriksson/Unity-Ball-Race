@@ -8,9 +8,9 @@ public  class LeaderBoard : MonoBehaviour
     // Leaderboard IDs for each level
     private Dictionary<string, string> levelLeaderBoardIDs = new Dictionary<string, string>()
     {
-        {"Level1", "21684"},
-        {"Level2", "21689"},
-        {"Level3", "21688"},
+        {"Level1", "21733"},
+        {"Level2", "21734"},
+        {"Level3", "21735"},
     };
 
     void Awake()
@@ -18,9 +18,10 @@ public  class LeaderBoard : MonoBehaviour
         // Start the login routine
          StartCoroutine(LoginRoutine());
     }
+    
     IEnumerator LoginRoutine()
     {
-        
+        Debug.Log("Logging in...");
         bool done = false;
         LootLockerSDKManager.StartGuestSession((response) =>
         {

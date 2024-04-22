@@ -12,20 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 182cd195a28310e479cddf7ff82822f8, type: 3}
   m_Name: LootLockerConfig
   m_EditorClassIdentifier: 
-  apiKey: dev_e11490736f854af6928c82f30d99216f
+  apiKey: dev_63e22cf36f234683ad44e5de56577159
   token: 
-  adminToken: b893df3ab27f799ea9ae56327b8fac2822762cbb
+  adminToken: 80f6b258c197a7ce79217c519e896ab8940bf444
   refreshToken: 
-  domainKey: 9pshyhab
+  domainKey: w91fb1ud
   gameID: 0
   game_version: 1.0.0.0
   sdk_version: 2.1.5
-  deviceID: defaultPlayerId
+  deviceID: 
   url: https://api.lootlocker.io/v1
-  adminUrl: https://w91fb1ud.api.lootlocker.io/admin
-  playerUrl: https://w91fb1ud.api.lootlocker.io/player
-  userUrl: https://w91fb1ud.api.lootlocker.io/game
-  baseUrl: https://w91fb1ud.api.lootlocker.io
+  adminUrl: https://9pshyhab.api.lootlocker.io/admin
+  playerUrl: https://9pshyhab.api.lootlocker.io/player
+  userUrl: https://9pshyhab.api.lootlocker.io/game
+  baseUrl: https://9pshyhab.api.lootlocker.io
   clientSideRequestTimeOut: 180
   currentDebugLevel: 3
   allowTokenRefresh: 1

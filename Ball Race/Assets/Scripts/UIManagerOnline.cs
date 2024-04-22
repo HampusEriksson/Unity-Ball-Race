@@ -13,9 +13,9 @@ public class UIManagerOnline : MonoBehaviour
 
     private Dictionary<string, string> levelLeaderBoardIDs = new Dictionary<string, string>()
     {
-        {"Level1", "21684"},
-        {"Level2", "21689"},
-        {"Level3", "21688"},
+        {"Level1", "21733"},
+        {"Level2", "21734"},
+        {"Level3", "21735"},
     };
 
     public void Start()
@@ -42,7 +42,7 @@ public class UIManagerOnline : MonoBehaviour
         Debug.Log("Fetching high scores for " + level + "...");
         bool done = false;
         string leaderBoardID = levelLeaderBoardIDs[level];
-
+        
         LootLockerSDKManager.GetScoreList(leaderBoardID, 10,0, (response) =>
         {
             if (response.success)
